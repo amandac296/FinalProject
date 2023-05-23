@@ -18,31 +18,29 @@ public class RecipeNetworking {
             HttpClient client = HttpClient.newHttpClient();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             urlResponse = response.body();
-            System.out.println(urlResponse);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
         // create object of response
-//            JSONObject jsonObj = new JSONObject(urlResponse);
-//
-//            // parse current weather info
-//            JSONObject currentObj = jsonObj.getJSONObject("current");
-//            double tempC = currentObj.getDouble("temp_c");
-//            double tempF = currentObj.getDouble("temp_f");
-//            JSONObject conditionObj = currentObj.getJSONObject("condition");
-//            String condition = conditionObj.getString("text");
-//            String iconURL = conditionObj.getString("icon");
-//            iconURL = "https:" + iconURL;
-//
-//            // parse location info
-//            JSONObject locationObj = jsonObj.getJSONObject("location");
-//            String location = locationObj.getString("name");
-//
-//            // create and return Weather object
-//            Weather weather = new Weather(tempC, tempF, condition, iconURL, location);
-//            return weather;
+            JSONObject jsonObj = new JSONObject(urlResponse);
 
-        return null;
+            // parse current weather info
+            JSONObject currentObj = jsonObj.getJSONObject("current");
+            double tempC = currentObj.getDouble("temp_c");
+            double tempF = currentObj.getDouble("temp_f");
+            JSONObject conditionObj = currentObj.getJSONObject("condition");
+            String condition = conditionObj.getString("text");
+            String iconURL = conditionObj.getString("icon");
+            iconURL = "https:" + iconURL;
+
+            // parse location info
+            JSONObject locationObj = jsonObj.getJSONObject("location");
+            String location = locationObj.getString("name");
+
+            // create and return Weather object
+            Weather weather = new Weather(tempC, tempF, condition, iconURL, location);
+            return weather;
+
     }
 }

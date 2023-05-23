@@ -9,7 +9,7 @@ public class RecipeNetworking {
     private static final String API_KEY = "1";
 
     public static Recipe getRecipeByCatergories(String category) {
-        String endPoint = "/api.json";
+        String endPoint = "/api/json";
         String url = BASE_URL + endPoint + "/v1/" + API_KEY + "/filter.php?c=" + category;
         String urlResponse = "";
         try {

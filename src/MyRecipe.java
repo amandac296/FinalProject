@@ -6,10 +6,19 @@ public class MyRecipe {
     private JButton enterButton;
     private JButton clearButton;
     private JButton beefButton;
-    private JButton button2;
-    private JButton button3;
-    private JButton button4;
-    private JButton button5;
+    private JButton breakfastButton1;
+    private JButton chickenButton;
+    private JButton dessertButton;
+    private JButton goatButton;
+    private JButton lambButton;
+    private JButton miscellaneousButton;
+    private JButton pastaButton;
+    private JButton porkButton;
+    private JButton seafoodButton;
+    private JButton sidesButton;
+    private JButton startersButton;
+    private JButton veganButton;
+    private JButton vegetarianButton;
 
     private void createUIComponents() {
         // TODO: place custom component creation code here

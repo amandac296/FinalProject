@@ -19,6 +19,12 @@ public class MyRecipe {
     private JButton startersButton;
     private JButton veganButton;
     private JButton vegetarianButton;
+    private JPanel categoryPanel;
+    private JLabel Intro;
+    private JPanel MainPanel;
+    private JPanel SearchPanel;
+    private JLabel CatergoriesLabel;
+    private JLabel SearchLabel;
 
     private void createUIComponents() {
         // TODO: place custom component creation code here

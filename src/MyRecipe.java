@@ -2,7 +2,7 @@ import javax.swing.*;
 
 public class MyRecipe {
     private JLabel MyRecipe;
-    private JTextField textField1;
+    private JTextField searchByIDTextField;
     private JButton enterButton;
     private JButton clearButton;
     private JButton beefButton;

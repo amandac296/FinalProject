@@ -25,20 +25,18 @@ public class RecipeNetworking {
         }
 
         // create object of response
-            JSONObject jsonObj = new JSONObject(urlResponse);
+        JSONObject jsonObj = new JSONObject(urlResponse);
 
-            // parse meals info
-            JSONArray mealArray = jsonObj.getJSONArray("meals");
-            ArrayList<String> meals = new ArrayList<String>();
-            for (int i = 0; i < mealArray.length(); i++) {
-                JSONObject obj = mealArray.getJSONObject(i);
-                String strMeal = obj.getString("strMeal");
-                meals.add(strMeal);
-            }
-
-
-            // create and return meal object
-           return meals;
-
+        // parse meals info
+        JSONArray mealArray = jsonObj.getJSONArray("meals");
+        ArrayList<String> meals = new ArrayList<String>();
+        for (int i = 0; i < mealArray.length(); i++) {
+            JSONObject obj = mealArray.getJSONObject(i);
+            String strMeal = obj.getString("strMeal");
+            int strID = obj.getInt("idMeal");
+            meals.add(strMeal + "- " + strID);
+        }
+        // create and return meal object
+        return meals;
     }
 }

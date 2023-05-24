@@ -39,4 +39,33 @@ public class RecipeNetworking {
         // create and return meal object
         return meals;
     }
+
+    //returns the step-by-step instructions for the recipe requested by user
+    public static void getRecipe(int recipeID) {
+//        www.themealdb.com/api/json/v1/1/lookup.php?i=52772
+        String endPoint = "/api/json";
+        String url = BASE_URL + endPoint + "/v1/" + API_KEY + "/lookup.php?i=" + recipeID;
+        String urlResponse = "";
+        try {
+            URI myUri = URI.create(url);
+            HttpRequest request = HttpRequest.newBuilder().uri(myUri).build();
+            HttpClient client = HttpClient.newHttpClient();
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            urlResponse = response.body();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        // create object of response
+        JSONObject jsonObj = new JSONObject(urlResponse);
+        // parse meals info
+        JSONArray mealArray = jsonObj.getJSONArray("meals");
+        String origin = mealArray.getJSONObject(0).getString("strArea");
+        String strInstructions = mealArray.getJSONObject(0).getString("strInstructions");
+        ArrayList<String> strIngredients = new ArrayList<>();
+        for (int i = 0; i < 20; i++){
+            String ingredient = mealArray.getJSONObject(0).getString("strIngredient" + i);
+             strIngredients.add(ingredient);
+        }
+
+    }
 }

@@ -3,12 +3,14 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import org.json.JSONObject;
+import org.json.JSONArray;
+import java.util.ArrayList;
 
 public class RecipeNetworking {
     private static final String BASE_URL = "https://www.themealdb.com";
     private static final String API_KEY = "1";
 
-    public static Recipe getRecipeByCatergories(String category) {
+    public static ArrayList<String> getRecipeByCatergories(String category) {
         String endPoint = "/api/json";
         String url = BASE_URL + endPoint + "/v1/" + API_KEY + "/filter.php?c=" + category;
         String urlResponse = "";

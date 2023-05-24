@@ -25,22 +25,18 @@ public class RecipeNetworking {
         // create object of response
             JSONObject jsonObj = new JSONObject(urlResponse);
 
-            // parse current weather info
-            JSONObject currentObj = jsonObj.getJSONObject("current");
-            double tempC = currentObj.getDouble("temp_c");
-            double tempF = currentObj.getDouble("temp_f");
-            JSONObject conditionObj = currentObj.getJSONObject("condition");
-            String condition = conditionObj.getString("text");
-            String iconURL = conditionObj.getString("icon");
-            iconURL = "https:" + iconURL;
+            // parse meals info
+            JSONArray mealArray = jsonObj.getJSONArray("meals");
+            ArrayList<String> meals = new ArrayList<String>();
+            for (int i = 0; i < mealArray.length(); i++) {
+                JSONObject obj = mealArray.getJSONObject(i);
+                String strMeal = obj.getString("strMeal");
+                meals.add(strMeal);
+            }
 
-            // parse location info
-            JSONObject locationObj = jsonObj.getJSONObject("location");
-            String location = locationObj.getString("name");
 
-            // create and return Weather object
-            Weather weather = new Weather(tempC, tempF, condition, iconURL, location);
-            return weather;
+            // create and return meal object
+           return meals;
 
     }
 }

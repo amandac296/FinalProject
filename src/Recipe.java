@@ -20,7 +20,7 @@ public class Recipe {
     }
 
     //returns ingredient of a certain index
-    public String getSpecficIngredient(String find){
+    public String getSpecificIngredient(String find){
         for(int i = 0; i < ingredients.size(); i++){
             if (ingredients.get(i).equals(find)){
                 return ingredients.get(i);

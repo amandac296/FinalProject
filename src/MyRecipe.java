@@ -1,6 +1,13 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
+
 
 
 public class MyRecipe extends JFrame implements ActionListener {
@@ -25,6 +32,7 @@ public class MyRecipe extends JFrame implements ActionListener {
     private JPanel categoryPanel;
     private JLabel Intro;
     private JPanel mainPanel;
+
     private JPanel SearchPanel;
     private JLabel CatergoriesLabel;
     private JLabel SearchLabel;
@@ -39,6 +47,9 @@ public class MyRecipe extends JFrame implements ActionListener {
         // TODO: place custom component creation code here
         setContentPane(mainPanel);
         setTitle("Recipe Finder");
+        add(MyRecipe);
+        add(Intro);
+        add(SearchLabel);
         setSize(550, 250);
         setLocation(450, 100);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

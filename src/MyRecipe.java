@@ -1,12 +1,6 @@
 import javax.swing.*;
-import javax.imageio.ImageIO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.net.URL;
 
 
 public class MyRecipe extends JFrame implements ActionListener, ItemListener{
@@ -30,7 +24,7 @@ public class MyRecipe extends JFrame implements ActionListener, ItemListener{
     private JButton vegetarianButton;
     private JPanel categoryPanel;
     private JLabel Intro;
-    private JPanel MainPanel;
+    private JPanel mainPanel;
     private JPanel SearchPanel;
     private JLabel CatergoriesLabel;
     private JLabel SearchLabel;
@@ -43,7 +37,7 @@ public class MyRecipe extends JFrame implements ActionListener, ItemListener{
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
-        setContentPane(MainPanel);
+        setContentPane(mainPanel);
         setTitle("Recipe Finder");
         setSize(550, 250);
         setLocation(450, 100);
@@ -85,23 +79,34 @@ public class MyRecipe extends JFrame implements ActionListener, ItemListener{
                 loadRecipe(Integer.parseInt(mealID));
             } else if (button.getText().equals("Clear")) {
                 clear();
-            } else if (button.getText().equals("beef")) {
-            } else if (button.getText().equals("breakfast")) {
-            } else if (button.getText().equals("chicken")) {
-            } else if (button.getText().equals("dessert")) {
-            } else if (button.getText().equals("goat")) {
-            } else if (button.getText().equals("lamb")) {
-            } else if (button.getText().equals("miscellaneous")) {
-            } else if (button.getText().equals("pasta")) {
-            } else if (button.getText().equals("pork")) {
-            } else if (button.getText().equals("seafood")) {
-            } else if (button.getText().equals("sides")) {
-            } else if (button.getText().equals("starters")) {
-            } else if (button.getText().equals("vegan")) {
-            } else if (button.getText().equals("vegetarian")) {
-
-            } else {
-                clear();
+//            } else if (button.getText().equals("beef")) {
+//
+//            } else if (button.getText().equals("breakfast")) {
+//
+//            } else if (button.getText().equals("chicken")) {
+//
+//            } else if (button.getText().equals("dessert")) {
+//
+//            } else if (button.getText().equals("goat")) {
+//
+//            } else if (button.getText().equals("lamb")) {
+//
+//            } else if (button.getText().equals("miscellaneous")) {
+//
+//            } else if (button.getText().equals("pasta")) {
+//
+//            } else if (button.getText().equals("pork")) {
+//
+//            } else if (button.getText().equals("seafood")) {
+//
+//            } else if (button.getText().equals("sides")) {
+//
+//            } else if (button.getText().equals("starters")) {
+//
+//            } else if (button.getText().equals("vegan")) {
+//
+//            } else if (button.getText().equals("vegetarian")) {
+//
             }
         }
     }

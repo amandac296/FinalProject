@@ -69,6 +69,6 @@ public class RecipeNetworking {
                 strIngredients.add(ingredient  + ": " + measurement);
             }
         }
-
+        System.out.println(strIngredients);
     }
 }

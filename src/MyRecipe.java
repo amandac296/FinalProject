@@ -3,7 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class MyRecipe extends JFrame implements ActionListener, ItemListener{
+public class MyRecipe extends JFrame implements ActionListener {
     private JLabel MyRecipe;
     private JTextField searchByIDTextField;
     private JButton enterButton;

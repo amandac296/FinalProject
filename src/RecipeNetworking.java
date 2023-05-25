@@ -62,9 +62,12 @@ public class RecipeNetworking {
         String origin = mealArray.getJSONObject(0).getString("strArea");
         String strInstructions = mealArray.getJSONObject(0).getString("strInstructions");
         ArrayList<String> strIngredients = new ArrayList<>();
-        for (int i = 0; i < 20; i++){
-            String ingredient = mealArray.getJSONObject(0).getString("strIngredient" + i);
-             strIngredients.add(ingredient);
+        for (int i = 1; i <= 9; i++){
+            if (mealArray.getJSONObject(0).getString("strIngredient" + i) != null) {
+                String ingredient = mealArray.getJSONObject(0).getString("strIngredient" + i);
+                String measurement = mealArray.getJSONObject(0).getString("strMeasure" + i);
+                strIngredients.add(ingredient  + ": " + measurement);
+            }
         }
 
     }

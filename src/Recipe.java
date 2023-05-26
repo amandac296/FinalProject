@@ -3,10 +3,12 @@ import java.util.ArrayList;
 public class Recipe {
     private String title;
     private ArrayList<String> ingredients;
+    private String instructions;
 
-    public Recipe(String name, ArrayList<String> i) {
+    public Recipe(String name, ArrayList<String> i, String instructions) {
         title = name;
         ingredients = i;
+        this.instructions = instructions;
     }
 
     //returns the name of the recipe

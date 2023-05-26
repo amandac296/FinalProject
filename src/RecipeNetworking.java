@@ -60,6 +60,11 @@ public class RecipeNetworking {
         // parse meals info
         JSONArray mealArray = jsonObj.getJSONArray("meals");
         String strInstructions = mealArray.getJSONObject(0).getString("strInstructions");
+
+        //gets the name of the recipe
+        String name = mealArray.getJSONObject(0).getString("strMeal");
+
+        //Lists of the all the ingredients and measurements in the recipe
         ArrayList<String> strIngredients = new ArrayList<>();
         for (int i = 1; i <= 9; i++){
             if (mealArray.getJSONObject(0).getString("strIngredient" + i) != null) {
@@ -68,6 +73,8 @@ public class RecipeNetworking {
                 strIngredients.add(ingredient  + ": " + measurement);
             }
         }
-        System.out.println(strIngredients);
+
+        Recipe recipe = new Recipe(name, strIngredients, strInstructions);
+        System.out.println(recipe.toString());
     }
 }

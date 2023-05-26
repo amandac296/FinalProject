@@ -10,22 +10,34 @@ public class Recipe {
     }
 
     //returns the name of the recipe
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
 
     //returns arraylist of all ingredients
-    public ArrayList<String> getIngredients(){
+    public ArrayList<String> getIngredients() {
         return ingredients;
     }
 
+    public String getInstructions() {
+        return instructions;
+    }
+
     //returns ingredient of a certain index
-    public String getSpecificIngredient(String find){
-        for(int i = 0; i < ingredients.size(); i++){
-            if (ingredients.get(i).equals(find)){
+    public String getSpecificIngredient(String find) {
+        for (int i = 0; i < ingredients.size(); i++) {
+            if (ingredients.get(i).equals(find)) {
                 return ingredients.get(i);
             }
         }
         return find;
+    }
+
+    @Override
+    public String toString() {
+        String info = "Name: " + title + "\n";
+        info += ingredients + "\n";
+        info += instructions;
+        return info;
     }
 }

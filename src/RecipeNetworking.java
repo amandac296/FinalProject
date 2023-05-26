@@ -10,7 +10,7 @@ public class RecipeNetworking {
     private static final String BASE_URL = "https://www.themealdb.com";
     private static final String API_KEY = "1";
 
-    public static ArrayList<String> getRecipeByCatergories(String category) {
+    public static ArrayList<String> getRecipeByCategories(String category) {
         String endPoint = "/api/json";
         String url = BASE_URL + endPoint + "/v1/" + API_KEY + "/filter.php?c=" + category;
         String urlResponse = "";
@@ -59,7 +59,6 @@ public class RecipeNetworking {
         JSONObject jsonObj = new JSONObject(urlResponse);
         // parse meals info
         JSONArray mealArray = jsonObj.getJSONArray("meals");
-        String origin = mealArray.getJSONObject(0).getString("strArea");
         String strInstructions = mealArray.getJSONObject(0).getString("strInstructions");
         ArrayList<String> strIngredients = new ArrayList<>();
         for (int i = 1; i <= 9; i++){

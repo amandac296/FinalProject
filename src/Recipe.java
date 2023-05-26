@@ -37,9 +37,15 @@ public class Recipe {
 
     @Override
     public String toString() {
-        String info = "Name: " + title + "\n";
-        info += ingredients + "\n";
+        String info = "Name: " + title + "\n" + "Ingredients: \n";
+
+        //prints out the ingredients and measurement  nicely
+        for(int i = 0; i < ingredients.size(); i++) {
+            info += i+1 + ". " + ingredients.get(i) + "\n";
+        }
         info += instructions;
+
+
         return info;
     }
 }

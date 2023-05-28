@@ -27,7 +27,7 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
     private JPanel mainPanel;
 
     private JPanel SearchPanel;
-    private JLabel CatergoriesLabel;
+    //private JLabel CategoriesLabel;
     private JLabel SearchLabel;
 
     private RecipeNetworking meals;
@@ -35,6 +35,8 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
 
     public MyRecipeGUI() {
         createUIComponents();
+        rFrame = new RecipeFrame();
+        meals = new RecipeNetworking();
     }
 
     private void createUIComponents() {
@@ -65,7 +67,7 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
     }
 
     private void loadRecipe(int ID) {
-        meal.getRecipe(ID);
+        meals.getRecipe(ID);
     }
 
     private void clear() {

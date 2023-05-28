@@ -11,9 +11,11 @@ public class RecipeGUI extends JFrame implements ActionListener {
     private JTextField ingredientsTextField;
     private JPanel instructionsPanel;
     private JPanel backPanel;
+    private RecipeFrame rFrame;
 
     public RecipeGUI() {
         createUIComponents();
+        rFrame = new RecipeFrame();
     }
 
     private void createUIComponents() {
@@ -33,7 +35,7 @@ public class RecipeGUI extends JFrame implements ActionListener {
         if (actionSource instanceof JButton) {
             JButton button = (JButton) actionSource;
             if (button.getText().equals("Back")) {
-
+                rFrame.replaceScreen("START");
             }
 
         }

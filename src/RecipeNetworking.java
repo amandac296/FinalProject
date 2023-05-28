@@ -10,6 +10,7 @@ public class RecipeNetworking {
     private static final String BASE_URL = "https://www.themealdb.com";
     private static final String API_KEY = "1";
 
+    //returns arraylist of all recipe names in a specific category
     public static ArrayList<String> getRecipeByCategories(String category) {
         String endPoint = "/api/json";
         String url = BASE_URL + endPoint + "/v1/" + API_KEY + "/filter.php?c=" + category;
@@ -36,13 +37,11 @@ public class RecipeNetworking {
             int strID = obj.getInt("idMeal");
             meals.add(strMeal + "- " + strID);
         }
-        // create and return meal object
         return meals;
     }
 
-    //returns the step-by-step instructions for the recipe requested by user
-    public static void getRecipe(int recipeID) {
-//        www.themealdb.com/api/json/v1/1/lookup.php?i=52772
+    //returns the info about the recipe
+    public static Recipe getRecipe(int recipeID) {
         String endPoint = "/api/json";
         String url = BASE_URL + endPoint + "/v1/" + API_KEY + "/lookup.php?i=" + recipeID;
         String urlResponse = "";
@@ -75,6 +74,6 @@ public class RecipeNetworking {
         }
 
         Recipe recipe = new Recipe(name, strIngredients, strInstructions);
-        System.out.println(recipe.toString());
+        return recipe;
     }
 }

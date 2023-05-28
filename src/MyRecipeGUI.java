@@ -30,7 +30,8 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
     private JLabel CatergoriesLabel;
     private JLabel SearchLabel;
 
-    private RecipeNetworking meal;
+    private RecipeNetworking meals;
+    public RecipeFrame rFrame;
 
     public MyRecipeGUI() {
         createUIComponents();
@@ -81,35 +82,40 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
                 loadRecipe(Integer.parseInt(mealID));
             } else if (button.getText().equals("Clear")) {
                 clear();
-            } else if (button.getText().equals("beef")) {
+            } else {
+                rFrame.replaceScreen("NEXT");
+                if (button.getText().equals("beef")) {
+                    meals.getRecipeByCategories("beef");
+                } else if (button.getText().equals("breakfast")) {
+                    meals.getRecipeByCategories("breakfast");
+                } else if (button.getText().equals("chicken")) {
+                    meals.getRecipeByCategories("chicken");
+                } else if (button.getText().equals("dessert")) {
+                    meals.getRecipeByCategories("dessert");
+                } else if (button.getText().equals("goat")) {
+                    meals.getRecipeByCategories("goat");
+                } else if (button.getText().equals("lamb")) {
+                    meals.getRecipeByCategories("lamb");
+                } else if (button.getText().equals("miscellaneous")) {
+                    meals.getRecipeByCategories("miscellaneous");
+                } else if (button.getText().equals("pasta")) {
+                    meals.getRecipeByCategories("pasta");
+                } else if (button.getText().equals("pork")) {
+                    meals.getRecipeByCategories("pork");
+                } else if (button.getText().equals("seafood")) {
+                    meals.getRecipeByCategories("seafood");
+                } else if (button.getText().equals("sides")) {
+                    meals.getRecipeByCategories("sides");
+                } else if (button.getText().equals("starters")) {
+                    meals.getRecipeByCategories("starters");
+                } else if (button.getText().equals("vegan")) {
+                    meals.getRecipeByCategories("vegan");
+                } else if (button.getText().equals("vegetarian")) {
+                    meals.getRecipeByCategories("vegetarian");
 
-            } else if (button.getText().equals("breakfast")) {
-
-            } else if (button.getText().equals("chicken")) {
-
-            } else if (button.getText().equals("dessert")) {
-
-            } else if (button.getText().equals("goat")) {
-
-            } else if (button.getText().equals("lamb")) {
-
-            } else if (button.getText().equals("miscellaneous")) {
-
-            } else if (button.getText().equals("pasta")) {
-
-            } else if (button.getText().equals("pork")) {
-
-            } else if (button.getText().equals("seafood")) {
-
-            } else if (button.getText().equals("sides")) {
-
-            } else if (button.getText().equals("starters")) {
-
-            } else if (button.getText().equals("vegan")) {
-
-            } else if (button.getText().equals("vegetarian")) {
-
+                }
             }
+
         }
     }
 

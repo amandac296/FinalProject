@@ -7,7 +7,7 @@ public class RecipeGUI extends JFrame implements ActionListener {
 
     private JButton backButton;
     private JPanel mealPanel;
-    private JTextArea hELLOTextArea;
+    private JTextArea Names;
     private RecipeFrame rFrame;
     private ArrayList<String> names;
 
@@ -26,7 +26,12 @@ public class RecipeGUI extends JFrame implements ActionListener {
         //sets up listeners
         backButton.addActionListener(this);
         setVisible(false);
+
     }
+    private void updateScreen() {
+
+    }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {

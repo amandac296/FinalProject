@@ -1,25 +1,24 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class RecipeGUI extends JFrame implements ActionListener {
 
-    private JLabel meal;
-    private JTextField instructionsLabel;
     private JButton backButton;
-    private JPanel meaPanel;
-    private JTextField ingredientsTextField;
-    private JPanel instructionsPanel;
-    private JPanel backPanel;
+    private JPanel mealPanel;
+    private JTextArea hELLOTextArea;
     private RecipeFrame rFrame;
+    private ArrayList<String> names;
 
-    public RecipeGUI() {
+    public RecipeGUI(ArrayList<String> names) {
         createUIComponents();
-        rFrame = new RecipeFrame();
+        this.names = names;
+//        rFrame = new RecipeFrame();
     }
 
     private void createUIComponents() {
-        setContentPane(meaPanel);
+        setContentPane(mealPanel);
         setTitle("Recipe");
         setSize(1050, 550);
         setLocation(450, 100);

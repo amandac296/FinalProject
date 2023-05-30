@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 //Color Scheme: https://www.schemecolor.com/brown-earth-tones.php
 public class MyRecipeGUI extends JFrame implements ActionListener {
@@ -27,7 +28,7 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
     private JPanel mainPanel;
 
     private JPanel SearchPanel;
-    //private JLabel CategoriesLabel;
+    private JLabel CategoriesLabel;
     private JLabel SearchLabel;
 
     private RecipeNetworking meals;
@@ -35,8 +36,8 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
 
     public MyRecipeGUI() {
         createUIComponents();
-        rFrame = new RecipeFrame();
-        meals = new RecipeNetworking();
+ //       rFrame = new RecipeFrame();
+//        meals = new RecipeNetworking();
     }
 
     private void createUIComponents() {
@@ -85,37 +86,41 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
             } else if (button.getText().equals("Clear")) {
                 clear();
             } else {
-                rFrame.replaceScreen("NEXT");
+                ArrayList<String> Categories = new ArrayList<>();
                 if (button.getText().equals("beef")) {
-                    meals.getRecipeByCategories("beef");
+                    Categories = meals.getRecipeByCategories("beef");
                 } else if (button.getText().equals("breakfast")) {
-                    meals.getRecipeByCategories("breakfast");
+                    Categories = meals.getRecipeByCategories("breakfast");
                 } else if (button.getText().equals("chicken")) {
-                    meals.getRecipeByCategories("chicken");
+                    Categories = meals.getRecipeByCategories("chicken");
                 } else if (button.getText().equals("dessert")) {
-                    meals.getRecipeByCategories("dessert");
+                    Categories = meals.getRecipeByCategories("dessert");
                 } else if (button.getText().equals("goat")) {
-                    meals.getRecipeByCategories("goat");
+                    Categories = meals.getRecipeByCategories("goat");
                 } else if (button.getText().equals("lamb")) {
-                    meals.getRecipeByCategories("lamb");
+                    Categories = meals.getRecipeByCategories("lamb");
                 } else if (button.getText().equals("miscellaneous")) {
-                    meals.getRecipeByCategories("miscellaneous");
+                    Categories = meals.getRecipeByCategories("miscellaneous");
                 } else if (button.getText().equals("pasta")) {
-                    meals.getRecipeByCategories("pasta");
+                    Categories = meals.getRecipeByCategories("pasta");
                 } else if (button.getText().equals("pork")) {
-                    meals.getRecipeByCategories("pork");
+                    Categories = meals.getRecipeByCategories("pork");
                 } else if (button.getText().equals("seafood")) {
-                    meals.getRecipeByCategories("seafood");
+                    Categories = meals.getRecipeByCategories("seafood");
                 } else if (button.getText().equals("sides")) {
-                    meals.getRecipeByCategories("sides");
+                    Categories = meals.getRecipeByCategories("sides");
                 } else if (button.getText().equals("starters")) {
-                    meals.getRecipeByCategories("starters");
+                    Categories = meals.getRecipeByCategories("starters");
                 } else if (button.getText().equals("vegan")) {
-                    meals.getRecipeByCategories("vegan");
+                    Categories = meals.getRecipeByCategories("vegan");
                 } else if (button.getText().equals("vegetarian")) {
                     meals.getRecipeByCategories("vegetarian");
 
                 }
+                RecipeGUI window2 = new RecipeGUI(Categories);
+                window2.setSize(1050, 550);
+                setVisible(false);
+                window2.setVisible(true);
             }
 
         }

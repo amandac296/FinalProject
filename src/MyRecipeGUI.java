@@ -114,15 +114,13 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
                 } else if (button.getText().equals("vegan")) {
                     Categories = meals.getRecipeByCategories("vegan");
                 } else if (button.getText().equals("vegetarian")) {
-                    meals.getRecipeByCategories("vegetarian");
-
+                    Categories = meals.getRecipeByCategories("vegetarian");
                 }
                 RecipeGUI window2 = new RecipeGUI(Categories);
                 window2.setSize(1050, 550);
                 setVisible(false);
                 window2.setVisible(true);
             }
-
         }
     }
 

@@ -7,6 +7,7 @@ public class RecipesByCategoryGUI extends JFrame implements ActionListener {
     private JLabel label1;
     private JButton backButton;
     private JPanel recipePanel;
+    private RecipeFrame rFrame;
 
     public RecipesByCategoryGUI() {
         createUIComponents();

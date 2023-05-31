@@ -1,7 +1,7 @@
 public class Main {
     public static void main (String[] args){
         RecipeNetworking new1 = new RecipeNetworking();
-        System.out.println(new1.getRecipeByCategories("Seafood"));
+        System.out.println(new1.getRecipeByCategories("Starter"));
         new1.getRecipe(52913);
         MyRecipeGUI gui = new MyRecipeGUI();
     }

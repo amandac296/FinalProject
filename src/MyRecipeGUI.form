@@ -189,24 +189,24 @@
               <text value="seafood"/>
             </properties>
           </component>
-          <component id="c98c" class="javax.swing.JButton" binding="sidesButton" default-binding="true">
+          <component id="c98c" class="javax.swing.JButton" binding="sideButton">
             <constraints>
               <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <background color="-9416904"/>
               <foreground color="-3756145"/>
-              <text value="sides"/>
+              <text value="side"/>
             </properties>
           </component>
-          <component id="bee8a" class="javax.swing.JButton" binding="startersButton" default-binding="true">
+          <component id="bee8a" class="javax.swing.JButton" binding="starterButton">
             <constraints>
               <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <background color="-9416904"/>
               <foreground color="-3756145"/>
-              <text value="starters"/>
+              <text value="starter"/>
             </properties>
           </component>
           <component id="a3067" class="javax.swing.JButton" binding="veganButton" default-binding="true">

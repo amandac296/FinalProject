@@ -19,8 +19,8 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
     private JButton pastaButton;
     private JButton porkButton;
     private JButton seafoodButton;
-    private JButton sidesButton;
-    private JButton startersButton;
+    private JButton sideButton;
+    private JButton starterButton;
     private JButton veganButton;
     private JButton vegetarianButton;
     private JPanel categoryPanel;
@@ -32,12 +32,10 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
     private JLabel SearchLabel;
 
     private RecipeNetworking meals;
-    public RecipeFrame rFrame;
 
     public MyRecipeGUI() {
         createUIComponents();
- //       rFrame = new RecipeFrame();
-//        meals = new RecipeNetworking();
+
     }
 
     private void createUIComponents() {
@@ -60,8 +58,8 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
         pastaButton.addActionListener(this);
         porkButton.addActionListener(this);
         seafoodButton.addActionListener(this);
-        sidesButton.addActionListener(this);
-        startersButton.addActionListener(this);
+        sideButton.addActionListener(this);
+        starterButton.addActionListener(this);
         veganButton.addActionListener(this);
         vegetarianButton.addActionListener(this);
         setVisible(true);
@@ -82,41 +80,47 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
             JButton button = (JButton) actionSource;
             if (button.getText().equals("Enter")) {
                 String mealID = searchByIDTextField.getText();
-                loadRecipe(Integer.parseInt(mealID));
+                Recipe mealRecipe = loadRecipe(Integer.parseInt(mealID));
+                //switches the screen
+                RecipeGUI window3 = new RecipeGUI(mealRecipe);
+                window3.setSize(1050, 550);
+                setVisible(false);
+                window3.setVisible(true);
+                window3.updateScreen();
             } else if (button.getText().equals("Clear")) {
                 clear();
             } else {
                 ArrayList<String> Categories = new ArrayList<>();
                 if (button.getText().equals("beef")) {
-                    Categories = meals.getRecipeByCategories("beef");
+                    Categories = meals.getRecipeByCategories("Beef");
                 } else if (button.getText().equals("breakfast")) {
-                    Categories = meals.getRecipeByCategories("breakfast");
+                    Categories = meals.getRecipeByCategories("Breakfast");
                 } else if (button.getText().equals("chicken")) {
-                    Categories = meals.getRecipeByCategories("chicken");
+                    Categories = meals.getRecipeByCategories("Chicken");
                 } else if (button.getText().equals("dessert")) {
-                    Categories = meals.getRecipeByCategories("dessert");
+                    Categories = meals.getRecipeByCategories("Dessert");
                 } else if (button.getText().equals("goat")) {
-                    Categories = meals.getRecipeByCategories("goat");
+                    Categories = meals.getRecipeByCategories("Goat");
                 } else if (button.getText().equals("lamb")) {
-                    Categories = meals.getRecipeByCategories("lamb");
+                    Categories = meals.getRecipeByCategories("Lamb");
                 } else if (button.getText().equals("miscellaneous")) {
-                    Categories = meals.getRecipeByCategories("miscellaneous");
+                    Categories = meals.getRecipeByCategories("Miscellaneous");
                 } else if (button.getText().equals("pasta")) {
-                    Categories = meals.getRecipeByCategories("pasta");
+                    Categories = meals.getRecipeByCategories("Pasta");
                 } else if (button.getText().equals("pork")) {
-                    Categories = meals.getRecipeByCategories("pork");
+                    Categories = meals.getRecipeByCategories("Pork");
                 } else if (button.getText().equals("seafood")) {
-                    Categories = meals.getRecipeByCategories("seafood");
-                } else if (button.getText().equals("sides")) {
-                    Categories = meals.getRecipeByCategories("sides");
-                } else if (button.getText().equals("starters")) {
-                    Categories = meals.getRecipeByCategories("starters");
+                    Categories = meals.getRecipeByCategories("Seafood");
+                } else if (button.getText().equals("side")) {
+                    Categories = meals.getRecipeByCategories("Side");
+                } else if (button.getText().equals("starter")) {
+                    Categories = meals.getRecipeByCategories("Starter");
                 } else if (button.getText().equals("vegan")) {
-                    Categories = meals.getRecipeByCategories("vegan");
+                    Categories = meals.getRecipeByCategories("Vegan");
                 } else if (button.getText().equals("vegetarian")) {
-                    Categories = meals.getRecipeByCategories("vegetarian");
+                    Categories = meals.getRecipeByCategories("Vegetarian");
                 }
-                RecipeGUI window2 = new RecipeGUI(Categories);
+                RecipesByCategoriesGUI window2 = new RecipesByCategoriesGUI(Categories);
                 window2.setSize(1050, 550);
                 setVisible(false);
                 window2.setVisible(true);

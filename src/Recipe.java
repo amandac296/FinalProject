@@ -12,7 +12,7 @@ public class Recipe {
     }
 
     //returns the name of the recipe
-    public String getTitle() {
+    public String getName() {
         return title;
     }
 

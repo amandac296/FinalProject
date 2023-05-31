@@ -65,8 +65,8 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-    private void loadRecipe(int ID) {
-        meals.getRecipe(ID);
+    private Recipe loadRecipe(int ID) {
+        return meals.getRecipe(ID);
     }
 
     private void clear() {
@@ -124,6 +124,7 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
                 window2.setSize(1050, 550);
                 setVisible(false);
                 window2.setVisible(true);
+                window2.updateScreen();
             }
         }
     }

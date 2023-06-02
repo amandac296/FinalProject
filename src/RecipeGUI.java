@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
+
 
 public class RecipeGUI extends JFrame implements ActionListener {
     private JButton backButton;
@@ -25,6 +27,7 @@ public class RecipeGUI extends JFrame implements ActionListener {
             }
         }
         //updates the instructions needed for the recipe
+
         Instructions.append(mealRecipe.getInstructions());
     }
     private void createUIComponents() {

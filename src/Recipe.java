@@ -24,7 +24,21 @@ public class Recipe {
     }
 
     public String getInstructions() {
-        return instructions;
+        int idxR = instructions.indexOf("\r");
+        int idxN = instructions.indexOf("\n");
+
+        //remove instances of \n and \r
+        while(idxR != -1) {
+            instructions = instructions.substring(0, idxR) + instructions.substring(idxR +2);
+            idxR = instructions.indexOf("\r");
+        }
+        while(idxN != -1) {
+            instructions = instructions.substring(0, idxN) + instructions.substring(idxN +2);
+            idxN = instructions.indexOf("\n");
+        }
+
+//        for(int i)
+          return instructions;
     }
     public String getImage(){
         return image;

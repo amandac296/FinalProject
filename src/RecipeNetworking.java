@@ -58,8 +58,10 @@ public class RecipeNetworking {
         JSONObject jsonObj = new JSONObject(urlResponse);
         // parse meals info
         JSONArray mealArray = jsonObj.getJSONArray("meals");
+        //gets instructions of the recipe
         String strInstructions = mealArray.getJSONObject(0).getString("strInstructions");
-
+        //gets image of recipe
+        String strImageURL = mealArray.getJSONObject(0).getString("strMealThumb");
         //gets the name of the recipe
         String name = mealArray.getJSONObject(0).getString("strMeal");
 
@@ -73,7 +75,7 @@ public class RecipeNetworking {
             }
         }
 
-        Recipe recipe = new Recipe(name, strIngredients, strInstructions);
+        Recipe recipe = new Recipe(name, strIngredients, strInstructions, strImageURL);
         return recipe;
     }
 }

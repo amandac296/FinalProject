@@ -54,13 +54,15 @@
             </constraints>
             <properties/>
           </component>
-          <component id="e513e" class="javax.swing.JTextArea" binding="Instructions">
+          <component id="eaa6d" class="javax.swing.JTextArea" binding="Instructions">
             <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="50"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <lineWrap value="true"/>
+            </properties>
           </component>
         </children>
       </grid>

@@ -44,7 +44,10 @@ public class RecipeGUI extends JFrame implements ActionListener {
         if (actionSource instanceof JButton) {
             JButton button = (JButton) actionSource;
             if (button.getText().equals("Back")) {
-
+                MyRecipeGUI windowBack = new MyRecipeGUI();
+                windowBack.setSize(1050, 550);
+                setVisible(false);
+                windowBack.setVisible(true);
             }
 
         }

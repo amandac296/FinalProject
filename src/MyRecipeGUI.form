@@ -231,15 +231,6 @@
           </component>
         </children>
       </grid>
-      <component id="e7e9f" class="javax.swing.JLabel" binding="Intro">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <foreground color="-11388625"/>
-          <text value="Welcome to Recipe Finder! Choose a category and find the dish best suited for you."/>
-        </properties>
-      </component>
       <component id="b2e35" class="javax.swing.JLabel" binding="CategoriesLabel">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -249,6 +240,15 @@
           <enabled value="true"/>
           <foreground color="-9416904"/>
           <text value="Categories "/>
+        </properties>
+      </component>
+      <component id="e7e9f" class="javax.swing.JLabel" binding="Intro">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-11388625"/>
+          <text value="Welcome to Recipe Finder! Choose a category and find the dish best suited for you."/>
         </properties>
       </component>
     </children>

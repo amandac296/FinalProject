@@ -23,6 +23,7 @@ public class RecipesByCategoriesGUI extends JFrame implements ActionListener {
         setSize(1050, 550);
         setLocation(450, 100);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
         //sets up listeners
         backButton.addActionListener(this);
         setVisible(false);

@@ -4,11 +4,13 @@ public class Recipe {
     private String title;
     private ArrayList<String> ingredients;
     private String instructions;
+    private String image;
 
-    public Recipe(String name, ArrayList<String> i, String instructions) {
+    public Recipe(String name, ArrayList<String> i, String instructions, String image) {
         title = name;
         ingredients = i;
         this.instructions = instructions;
+        this.image = image;
     }
 
     //returns the name of the recipe
@@ -23,6 +25,9 @@ public class Recipe {
 
     public String getInstructions() {
         return instructions;
+    }
+    public String getImage(){
+        return image;
     }
 
     //returns ingredient of a certain index

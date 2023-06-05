@@ -30,6 +30,7 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
     private JPanel SearchPanel;
     private JLabel CategoriesLabel;
     private JLabel SearchLabel;
+    private JLabel tryAgain;
 
     private RecipeNetworking meals;
 
@@ -45,6 +46,21 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
         setSize(1050, 550);
         setLocation(450, 100);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        //unhighlights the buttons
+        beefButton.setFocusable(false);
+        breakfastButton1.setFocusable(false);
+        chickenButton.setFocusable(false);
+        dessertButton.setFocusable(false);
+        goatButton.setFocusable(false);
+        lambButton.setFocusable(false);
+        miscellaneousButton.setFocusable(false);
+        pastaButton.setFocusable(false);
+        porkButton.setFocusable(false);
+        seafoodButton.setFocusable(false);
+        sideButton.setFocusable(false);
+        starterButton.setFocusable(false);
+        veganButton.setFocusable(false);
+        vegetarianButton.setFocusable(false);
         //sets up listeners
         enterButton.addActionListener(this);
         clearButton.addActionListener(this);
@@ -88,6 +104,7 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
                 window3.setVisible(true);
                 window3.updateScreen();
             } else if (button.getText().equals("Clear")) {
+                searchByIDTextField.setText("");
                 clear();
             } else {
                 ArrayList<String> Categories = new ArrayList<>();

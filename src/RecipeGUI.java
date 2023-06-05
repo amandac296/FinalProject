@@ -10,6 +10,7 @@ public class RecipeGUI extends JFrame implements ActionListener {
     private JLabel RecipeName;
     private JTextArea Ingredients;
     private JTextArea Instructions;
+    private JScrollBar scrollBar1;
     private Recipe mealRecipe;
 
     public RecipeGUI(Recipe mealRecipe) {

@@ -10,6 +10,7 @@ public class RecipesByCategoriesGUI extends JFrame implements ActionListener {
     private JTextArea Recipes;
     private JLabel RecipeByCategoryLabel;
     private JLabel RecipeIDLabel;
+    private JScrollBar vbar;
     private ArrayList<String> names;
 
     public RecipesByCategoriesGUI(ArrayList<String> recipes) {
@@ -23,7 +24,6 @@ public class RecipesByCategoriesGUI extends JFrame implements ActionListener {
         setSize(1050, 550);
         setLocation(450, 100);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
         //sets up listeners
         backButton.addActionListener(this);
         setVisible(false);
@@ -34,6 +34,7 @@ public class RecipesByCategoriesGUI extends JFrame implements ActionListener {
             Recipes.append(i+1 + "." + names.get(i) + "\n");
         }
     }
+
 
 
     @Override

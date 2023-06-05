@@ -26,18 +26,30 @@ public class Recipe {
     public String getInstructions() {
         int idxR = instructions.indexOf("\r");
         int idxN = instructions.indexOf("\n");
+        int idxT = instructions.indexOf("\t");
 
-        //remove instances of \n and \r
-        while(idxR != -1) {
-            instructions = instructions.substring(0, idxR) + instructions.substring(idxR +2);
-            idxR = instructions.indexOf("\r");
-        }
-        while(idxN != -1) {
-            instructions = instructions.substring(0, idxN) + instructions.substring(idxN +2);
-            idxN = instructions.indexOf("\n");
-        }
+            //remove instances of \n, \r, \t, and numbers
+            while(idxR != -1) {
+                instructions = instructions.substring(0, idxR) + instructions.substring(idxR +1);
+                idxR = instructions.indexOf("\r");
+            }
+            while(idxN != -1) {
+                instructions = instructions.substring(0, idxN) + instructions.substring(idxN +2);
+                idxN = instructions.indexOf("\n");
+            }
+            while(idxT != -1) {
+                instructions = instructions.substring(0, idxT) + instructions.substring(idxT +1);
+                idxT = instructions.indexOf("\t");
+            }
+//            String ints = "1234567890";
+//            for(int i = 1; i < instructions.length() -1; i++) {
+//                if(instructions.substring(i, i+1).equals(".") && ints.indexOf(instructions.substring(i-1, i)) == -1) {
+//                    instructions = instructions.substring(0, i +1) + "\n" + instructions.substring(i + 1);
+//                }
+//            }
 
-//        for(int i)
+
+
           return instructions;
     }
     public String getImage(){

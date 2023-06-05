@@ -95,14 +95,20 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
         if (actionSource instanceof JButton) {
             JButton button = (JButton) actionSource;
             if (button.getText().equals("Enter")) {
-                String mealID = searchByIDTextField.getText();
-                Recipe mealRecipe = loadRecipe(Integer.parseInt(mealID));
-                //switches the screen
-                RecipeGUI window3 = new RecipeGUI(mealRecipe);
-                window3.setSize(1050, 550);
-                setVisible(false);
-                window3.setVisible(true);
-                window3.updateScreen();
+                //checks if the input a mealID
+                String text = searchByIDTextField.getText();
+                if(text.equals("") || text.equals("Search by ID")){
+                    tryAgain.setText("Please Type an ID.");
+                } else {
+                    String mealID = searchByIDTextField.getText();
+                    Recipe mealRecipe = loadRecipe(Integer.parseInt(mealID));
+                    //switches the screen
+                    RecipeGUI window3 = new RecipeGUI(mealRecipe);
+                    window3.setSize(1050, 550);
+                    setVisible(false);
+                    window3.setVisible(true);
+                    window3.updateScreen();
+                }
             } else if (button.getText().equals("Clear")) {
                 searchByIDTextField.setText("");
                 clear();

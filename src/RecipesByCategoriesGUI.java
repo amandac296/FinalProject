@@ -28,8 +28,11 @@ public class RecipesByCategoriesGUI extends JFrame implements ActionListener {
         //sets up listeners
         backButton.addActionListener(this);
         setVisible(false);
+        Recipes.setEditable(false);        //sets the TextArea as uneditable
 
     }
+
+    //prints out all the recipes in that catergory including the recipe ID
     public void updateScreen() {
         for(int i = 0; i < names.size(); i++) {
             Recipes.append(i+1 + "." + names.get(i) + "\n");

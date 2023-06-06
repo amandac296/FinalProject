@@ -20,6 +20,12 @@ public class Recipe {
 
     //returns arraylist of all ingredients
     public ArrayList<String> getIngredients() {
+        for(int i = 0; i < ingredients.size(); i++) {
+            if(ingredients.get(i) == null || ingredients.get(i).equals("") || ingredients.get(i).equals(": ") || ingredients.get(i).equals(" : ")) {
+                ingredients.remove(i);
+                i--;
+            }
+        }
         return ingredients;
     }
 
@@ -28,25 +34,21 @@ public class Recipe {
         int idxN = instructions.indexOf("\n");
         int idxT = instructions.indexOf("\t");
 
-            //remove instances of \n, \r, \t, and numbers
-            while(idxR != -1) {
-                instructions = instructions.substring(0, idxR) + instructions.substring(idxR +1);
-                idxR = instructions.indexOf("\r");
-            }
-            while(idxN != -1) {
-                instructions = instructions.substring(0, idxN) + instructions.substring(idxN +2);
-                idxN = instructions.indexOf("\n");
-            }
+//            //remove instances of \n, \r, \t, and numbers
+//            while(idxR != -1) {
+//                instructions = instructions.substring(0, idxR) + instructions.substring(idxR +1);
+//                idxR = instructions.indexOf("\r");
+//            }
+//            while(idxN != -1) {
+//                instructions = instructions.substring(0, idxN) + instructions.substring(idxN +2);
+//                idxN = instructions.indexOf("\n");
+//            }
             while(idxT != -1) {
                 instructions = instructions.substring(0, idxT) + instructions.substring(idxT +1);
                 idxT = instructions.indexOf("\t");
             }
-//            String ints = "1234567890";
-//            for(int i = 1; i < instructions.length() -1; i++) {
-//                if(instructions.substring(i, i+1).equals(".") && ints.indexOf(instructions.substring(i-1, i)) == -1) {
-//                    instructions = instructions.substring(0, i +1) + "\n" + instructions.substring(i + 1);
-//                }
-//            }
+
+            //removes the numbers
 
 
 

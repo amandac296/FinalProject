@@ -1,3 +1,4 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,18 +22,26 @@ public class RecipeGUI extends JFrame implements ActionListener {
         this.mealRecipe = mealRecipe;
     }
 
-    public void updateScreen(){
+    public void updateScreen() {
         //updates the recipe name
         RecipeName.setText(mealRecipe.getName());
         //updates the ingredients needed by the recipe
-        for(int i = 0; i < mealRecipe.getIngredients().size(); i++) {
-            if(mealRecipe.getIngredients().get(i) != null && !mealRecipe.getIngredients().get(i).equals("")){
-                Ingredients.append(i+1 + ". " + mealRecipe.getIngredients().get(i) + "\n");
+        for (int i = 0; i < mealRecipe.getIngredients().size(); i++) {
+            if (mealRecipe.getIngredients().get(i) != null && !mealRecipe.getIngredients().get(i).equals("") && !mealRecipe.getIngredients().get(i).equals(":")) {
+                Ingredients.append(i + 1 + ". " + mealRecipe.getIngredients().get(i) + "\n");
             }
         }
         //updates the instructions needed for the recipe
 
         Instructions.append(mealRecipe.getInstructions());
+
+        //changes the placeholder images into an image of the recipe
+        try {
+            URL imageURL = new URL(mealRecipe.getImage());
+            BufferedImage image = ImageIO.read(imageURL);
+            ImageIcon icon = new ImageIcon(image);
+            foodPic.setIcon(icon);
+        } catch (IOException e) {}
     }
     private void createUIComponents() {
         setContentPane(recipePanel);

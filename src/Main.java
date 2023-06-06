@@ -13,9 +13,7 @@ public class Main {
         } catch (Exception e) {
             // If Nimbus is not available, you can set the GUI to another look and feel.
         }
-        RecipeNetworking new1 = new RecipeNetworking();
-        System.out.println(new1.getRecipeByCategories("Starter"));
-        new1.getRecipe(52913);
+
         MyRecipeGUI gui = new MyRecipeGUI();
 
     }

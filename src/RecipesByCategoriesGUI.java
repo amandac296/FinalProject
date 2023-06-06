@@ -11,6 +11,7 @@ public class RecipesByCategoriesGUI extends JFrame implements ActionListener {
     private JLabel RecipeByCategoryLabel;
     private JLabel RecipeIDLabel;
     private JScrollBar vbar;
+    private JScrollPane Recipes1;
     private ArrayList<String> names;
 
     public RecipesByCategoriesGUI(ArrayList<String> recipes) {

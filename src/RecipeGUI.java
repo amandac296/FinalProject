@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.net.URL;
 
 
@@ -11,6 +13,7 @@ public class RecipeGUI extends JFrame implements ActionListener {
     private JTextArea Ingredients;
     private JTextArea Instructions;
     private JScrollBar scrollBar1;
+    private JLabel foodPic;
     private Recipe mealRecipe;
 
     public RecipeGUI(Recipe mealRecipe) {
@@ -40,6 +43,8 @@ public class RecipeGUI extends JFrame implements ActionListener {
         //sets up listeners
         backButton.addActionListener(this);
         setVisible(false);
+        Instructions.setEditable(false);
+        Ingredients.setEditable(false);
     }
 
     @Override

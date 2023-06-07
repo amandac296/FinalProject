@@ -40,7 +40,7 @@ public class Recipe {
 //                idxR = instructions.indexOf("\r");
 //            }
 //            while(idxN != -1) {
-//                instructions = instructions.substring(0, idxN) + instructions.substring(idxN +2);
+//                instructions = instructions.substring(0, idxN) + instructions.substring(idxN +1);
 //                idxN = instructions.indexOf("\n");
 //            }
             while(idxT != -1) {

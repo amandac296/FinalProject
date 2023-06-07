@@ -143,6 +143,7 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
                 } else if (button.getText().equals("vegetarian")) {
                     Categories = meals.getRecipeByCategories("Vegetarian");
                 }
+
                 RecipesByCategoriesGUI window2 = new RecipesByCategoriesGUI(Categories);
                 window2.setSize(2000, 1050);
                 setVisible(false);

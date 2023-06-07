@@ -1,5 +1,6 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -40,7 +41,10 @@ public class RecipeGUI extends JFrame implements ActionListener {
             URL imageURL = new URL(mealRecipe.getImage());
             BufferedImage image = ImageIO.read(imageURL);
             ImageIcon icon = new ImageIcon(image);
+            Image scaleImage = icon.getImage().getScaledInstance(450, 450,Image.SCALE_DEFAULT);
+            icon = new ImageIcon(scaleImage);
             foodPic.setIcon(icon);
+
         } catch (IOException e) {}
     }
     private void createUIComponents() {

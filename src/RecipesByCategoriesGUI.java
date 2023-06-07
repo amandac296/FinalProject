@@ -22,13 +22,14 @@ public class RecipesByCategoriesGUI extends JFrame implements ActionListener {
     private void createUIComponents() {
         setContentPane(mealPanel);
         setTitle("Recipe");
-        setSize(1050, 550);
-        setLocation(450, 100);
+        setSize(500, 750);
+        setLocation(50, 50);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         //sets up listeners
         backButton.addActionListener(this);
         setVisible(false);
         Recipes.setEditable(false);        //sets the TextArea as uneditable
+        backButton.setFocusable(false);
 
     }
 
@@ -48,7 +49,7 @@ public class RecipesByCategoriesGUI extends JFrame implements ActionListener {
             JButton button = (JButton) actionSource;
             if (button.getText().equals("Back")) {
                 MyRecipeGUI windowBack = new MyRecipeGUI();
-                windowBack.setSize(1050, 550);
+                windowBack.setSize(1000, 350);
                 setVisible(false);
                 windowBack.setVisible(true);
             }

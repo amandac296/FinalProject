@@ -43,8 +43,8 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
         // TODO: place custom component creation code here
         setContentPane(mainPanel);
         setTitle("Recipe Finder");
-        setSize(1050, 550);
-        setLocation(450, 100);
+        setSize(1000, 350);
+        setLocation(450, 400);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         //unhighlights the buttons
         beefButton.setFocusable(false);
@@ -104,7 +104,7 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
                     Recipe mealRecipe = loadRecipe(Integer.parseInt(mealID));
                     //switches the screen
                     RecipeGUI window3 = new RecipeGUI(mealRecipe);
-                    window3.setSize(1050, 550);
+                    window3.setSize(2000, 1050);
                     setVisible(false);
                     window3.setVisible(true);
                     window3.updateScreen();
@@ -144,7 +144,7 @@ public class MyRecipeGUI extends JFrame implements ActionListener {
                     Categories = meals.getRecipeByCategories("Vegetarian");
                 }
                 RecipesByCategoriesGUI window2 = new RecipesByCategoriesGUI(Categories);
-                window2.setSize(1050, 550);
+                window2.setSize(2000, 1050);
                 setVisible(false);
                 window2.setVisible(true);
                 window2.updateScreen();

@@ -46,14 +46,15 @@ public class RecipeGUI extends JFrame implements ActionListener {
     private void createUIComponents() {
         setContentPane(recipePanel);
         setTitle("Category");
-        setSize(1050, 550);
-        setLocation(450, 100);
+        setSize(2000, 1050);
+        setLocation(0, 0);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         //sets up listeners
         backButton.addActionListener(this);
         setVisible(false);
         Instructions.setEditable(false);
         Ingredients.setEditable(false);
+        backButton.setFocusable(false);
     }
 
     @Override
@@ -63,7 +64,7 @@ public class RecipeGUI extends JFrame implements ActionListener {
             JButton button = (JButton) actionSource;
             if (button.getText().equals("Back")) {
                 MyRecipeGUI windowBack = new MyRecipeGUI();
-                windowBack.setSize(1050, 550);
+                windowBack.setSize(1000, 350);
                 setVisible(false);
                 windowBack.setVisible(true);
             }
